@@ -1,6 +1,7 @@
 
 <?php
 
+require  'config.php';
 include 'artigo.php';
 $artigo = new Artigo();
 $artigos = $artigo->exibirTodos();
@@ -26,9 +27,11 @@ $artigos = $artigo->exibirTodos();
         <?php foreach ($artigos as $artigo) : ?>
 
             <h2>
-                <a href="artigo.php?id=<?php echo $artigo['id']?>">
-                <?php echo $artigo['titulo'] ?>
-            </a>
+                <a href="<?php echo $artigo['id']; ?>"> <?php echo $artigo['titulo'] ?></a>
+            
+             <!-- <a href="artigo.php?id=<?php echo $artigo['id']?>">  -->
+               
+  
 
             </h2>
 
