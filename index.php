@@ -2,8 +2,9 @@
 <?php
 
 require  'config.php';
-include 'artigo.php';
-$artigo = new Artigo();
+include './src/artigo.php';
+
+$artigo = new Artigo($mysql);
 $artigos = $artigo->exibirTodos();
 
 
