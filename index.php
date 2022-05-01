@@ -1,31 +1,13 @@
 
 <?php
 
-echo " hello World PHP"
+include 'artigo.php';
+$artigo = new Artigo();
+$artigos = $artigo->exibirTodos();
 
-$artigos = [
-    [
-        'titulo' => 'Primeiros passos com Spring',
-        'conteudo' => '  Na empresa onde trabalho começamos um Coding Dojo, que é basicamente uma reunião com programadores e
-        programadoras a fim de resolver desafios e aperfeiçoar as habilidades com algoritmos.',
-        'link' => 'primeiros-passos-com-spring.html',
 
-    ],
-    [
-        'titulo' => 'Primeiros passos com Spring',
-        'conteudo' => '  Na empresa onde trabalho começamos um Coding Dojo, que é basicamente uma reunião com programadores e
-        programadoras a fim de resolver desafios e aperfeiçoar as habilidades com algoritmos.',
-        'link' => 'o-que-e-metodologia-agil.html',
 
-    ],
-    [
-        'titulo' => 'Como é o funil do Growth Hacking?',
-        'conteudo' => '       Minha amiga que possui um clube de assinaturas começou a utilizar o Growth Hacking após conhecer um pouco
-        mais sobre ele.',
-        'link' => 'como-e-o-funil-do-growth-hacking.html',
 
-    ],  
-];
 
 ?>
 
@@ -41,37 +23,25 @@ $artigos = [
 <body>
     <div id="container">
         <h1>Meu Blog</h1>
+        <?php foreach ($artigos as $artigo) : ?>
 
-
-        <?php foreach ($artigos as $artigo) ?>
-
-
-
-        <h2>
-            <a href="<?php echo $artigo1['link'] ?>">
-                
+            <h2>
+                <a href="artigo.php?id=<?php echo $artigo['id']?>">
+                <?php echo $artigo['titulo'] ?>
             </a>
-        </h2>
-        <p>
-            <?php echo $artigo1['conteudo']?>
-            <!-- Na empresa onde trabalho começamos um Coding Dojo, que é basicamente uma reunião com programadores e
-            programadoras a fim de resolver desafios e aperfeiçoar as habilidades com algoritmos. -->
-        </p>
-        <h2>
-            <a href="">
-            </a>
-        </h2>
-        <p>
-        </p>
-        <h2>
-            <a href="">
-                
-            </a>
-        </h2>
-        <p>
-      
-        </p>
-        <?php endforeach ?>
+
+            </h2>
+
+            <p>
+                <?php echo $artigo['conteudo']; ?>
+            </p>
+
+
+  
+
+
+
+     <?php endforeach ?>
     </div>
 </body>
 
